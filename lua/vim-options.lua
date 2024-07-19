@@ -19,3 +19,7 @@ vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>")
 vim.keymap.set("n", "<leader>ee", "oif err != nil {<CR>}<Esc>Oreturn err")
 vim.keymap.set("n", "<leader>ff", ":!gofmt -w %<CR><CR>")
 vim.keymap.set("n", "<leader>pp", ":!prettier -w %<CR><CR>")
+
+-- Noice bindings
+-- dismiss Noice messages
+vim.keymap.set("n", "<leader>nd", "<cmd>NoiceDismiss<CR>", { desc = "Dismiss Nice Message" })
