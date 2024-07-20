@@ -24,6 +24,18 @@ vim.keymap.set("n", "<leader>pp", ":!prettier -w %<CR><CR>")
 -- dismiss Noice messages
 vim.keymap.set("n", "<leader>nd", "<cmd>NoiceDismiss<CR>", { desc = "Dismiss Nice Message" })
 
+-- editor keybindings
+vim.keymap.set("n", "<leader>cf", 'ggVG"+y', { noremap = true, silent = true, desc = "Copy all file" })
+vim.keymap.set("n", "<leader>cl", ':let @+=getline(".")<CR>', { noremap = true, silent = true, desc = "Copy line" })
+
+function CopyNextNLines(n)
+	vim.cmd("normal! " .. n .. "yy")
+	vim.fn.setreg("+", vim.fn.getreg("0"))
+end
+
+vim.api.nvim_set_keymap("n", "<leader>cn", ":lua CopyNextNLines(vim.v.count1)<CR>", { noremap = true, silent = true })
+-- usage: <leader>cn4 --> copy the next 4 lines
+
 -- terminal keybindings
 vim.keymap.set("n", "<leader>tt", ":ToggleTerm<CR>", { noremap = true, silent = true, desc = "Toggle terminal" })
 vim.api.nvim_set_keymap(
