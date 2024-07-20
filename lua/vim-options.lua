@@ -23,3 +23,24 @@ vim.keymap.set("n", "<leader>pp", ":!prettier -w %<CR><CR>")
 -- Noice bindings
 -- dismiss Noice messages
 vim.keymap.set("n", "<leader>nd", "<cmd>NoiceDismiss<CR>", { desc = "Dismiss Nice Message" })
+
+-- terminal keybindings
+vim.keymap.set("n", "<leader>tt", ":ToggleTerm<CR>", { noremap = true, silent = true, desc = "Toggle terminal" })
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>tv",
+	":ToggleTerm direction=vertical<CR>",
+	{ noremap = true, silent = true, desc = "Toggle terminal vertically" }
+)
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>t",
+	":ToggleTerm direction=float<CR>",
+	{ noremap = true, silent = true, desc = "Toggle terminal on a floating window" }
+)
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>th",
+	":ToggleTerm direction=horizontal<CR>",
+	{ noremap = true, silent = true, desc = "Toggle terminal horizontally" }
+)
