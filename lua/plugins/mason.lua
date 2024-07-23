@@ -46,6 +46,7 @@ return {
 				"stylua", -- lua formatter
 				"golines", -- go formatter
 				"templ",
+				"black",
 				"eslint_d", -- js linter
 			},
 		})

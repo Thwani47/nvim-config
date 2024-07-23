@@ -17,7 +17,7 @@ vim.api.nvim_set_keymap("i", "jk", "<ESC>", { noremap = true })
 -- This keymap clears the search
 vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>")
 vim.keymap.set("n", "<leader>ee", "oif err != nil {<CR>}<Esc>Oreturn err")
-vim.keymap.set("n", "<leader>ff", ":!gofmt -w %<CR><CR>")
+vim.keymap.set("n", "<leader>gf", ":!gofmt -w %<CR><CR>")
 vim.keymap.set("n", "<leader>pp", ":!prettier -w %<CR><CR>")
 
 -- Noice bindings
@@ -46,7 +46,7 @@ vim.api.nvim_set_keymap(
 )
 vim.api.nvim_set_keymap(
 	"n",
-	"<leader>t",
+	"<leader>tf",
 	":ToggleTerm direction=float<CR>",
 	{ noremap = true, silent = true, desc = "Toggle terminal on a floating window" }
 )
@@ -56,3 +56,15 @@ vim.api.nvim_set_keymap(
 	":ToggleTerm direction=horizontal<CR>",
 	{ noremap = true, silent = true, desc = "Toggle terminal horizontally" }
 )
+
+-- Window management
+vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
+vim.keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })
+vim.keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })
+vim.keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" })
+
+vim.keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open in new tab" })
+vim.keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" })
+vim.keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to the next tab" })
+vim.keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to the previous tab" })
+vim.keymap.set("n", "<leader>tb", "<cmd>tabnew %<CR>", { desc = "Open current tab buffer new tab" })
