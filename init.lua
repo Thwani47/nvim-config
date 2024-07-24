@@ -35,3 +35,21 @@ require("lazy").setup({
 })
 
 require("telescope").load_extension("noice")
+
+require("copilot").setup({
+	filetypes = {
+		yaml = true,
+		typescript = true,
+		javascript = true,
+		json = true,
+		markdown = true,
+		go = true,
+		python = true,
+		css = true,
+		html = true,
+		csharp = true,
+		sql = true,
+	},
+	suggestion = { enabled = false },
+	panel = { enabled = false, auto_trigger = true },
+})
